@@ -30,6 +30,7 @@ import { bindable } from 'aurelia-framework';
 
 export class Documents {
   @bindable showing;
+  @bindable modalVariable;
   constructor() {
 
   }

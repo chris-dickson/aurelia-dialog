@@ -30,9 +30,19 @@
 <template>
   <section class="au-animate">
 
-    <button click.delegate="btnClick()">Show/Hide Modal</button>
+    <div style="position:relative;top:10px;">
+      <label>Enter text to be passed to the modal:</label>
+      <input value.bind="modalVariable">
+      <div>
+        <button click.delegate="btnClick()">Show/Hide Modal</button>
+      </div>
+      <div>
+        <label>You entered: ${modalVariable}</label>
+      </div>
+    </div>
 
-    <modal showing.bind="showing">
+
+    <modal showing.bind="showing" somethingbound.bind="modalVariable">
       <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
       <modal-body content-view="modal/simple-view" content-model.bind="simple-view"></modal-body>
       <modal-footer>

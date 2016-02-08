@@ -26,7 +26,12 @@
  *  SOFTWARE.
  * /
  */
+import {bindable} from 'aurelia-framework';
 export class SimpleViewModal {
+  @bindable showing;
+  @bindable somethingbound;
 
-  constructor() {}
+  constructor() {
+
+  }
 }
