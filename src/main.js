@@ -4,7 +4,9 @@ export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .history()
-    .developmentLogging();
+    .developmentLogging()
+    .plugin('aurelia-bs-modal');
+
 
   //Uncomment the line below to enable animation.
   //aurelia.use.plugin('aurelia-animator-css');

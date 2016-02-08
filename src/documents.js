@@ -26,58 +26,25 @@
  *  SOFTWARE.
  * /
  */
-import { inject } from 'aurelia-framework';
-import {Router} from 'aurelia-router';
-import {activationStrategy} from 'aurelia-router';
+import { bindable } from 'aurelia-framework';
 
-@inject(Router)
 export class Documents {
-  // App specific
-  router;
-  params;
+  @bindable showing;
+  constructor() {
 
-  state = {};
-
-  heading = 'Search for Documents';
-  query;
-  page;
-
-  queryResultsPlaceholder;
-
-  constructor(router) {
-    this.router = router;
   }
 
-  determineActivationStrategy() {
-    return activationStrategy.replace;
+  btnClick() {
+    this.showing = true;
   }
 
-  buildState() {
-    this.state = {
-      q: this.query
-    };
-    if (this.page && this.page !== '') {
-      this.state.p = this.page;
-    }
+  closeEventGoesHere() {
+    this.showing = false;
   }
 
-  submit() {
-    this.buildState();
-    this.router.navigateToRoute('documents', this.state);
+  someFunctionGoesHere() {
+    console.log('do stuff');
+    this.showing = false;
   }
 
-
-  doQuery() {
-    this.queryResultsPlaceholder = 'Executing query for ' + this.query + (':' + this.page);
-  }
-
-  activate(params) {
-    // console.debug(`activate is running with params: ${JSON.stringify(params)}`);
-    this.params = params;
-    if (params.q) {
-      this.query = params.q;
-      this.buildState();
-      this.doQuery();
-    }
-  }
 }
