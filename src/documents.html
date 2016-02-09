@@ -28,6 +28,8 @@
   -->
 
 <template>
+
+  <require from="modal/simple-view"></require>
   <section class="au-animate">
 
     <div style="position:relative;top:10px;">
@@ -42,9 +44,11 @@
     </div>
 
 
-    <modal showing.bind="showing" somethingbound.bind="modalVariable">
+    <modal showing.bind="showing">
       <modal-header title="Name Goes Here" close.call="closeEventGoesHere()"></modal-header>
-      <modal-body content-view="modal/simple-view" content-model.bind="simple-view"></modal-body>
+      <modal-body>
+        <simple-view somethingbound.bind="modalVariable"></simple-view>
+      </modal-body>
       <modal-footer>
         <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
         <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>

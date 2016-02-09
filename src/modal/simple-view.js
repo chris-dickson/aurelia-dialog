@@ -27,11 +27,7 @@
  * /
  */
 import {bindable} from 'aurelia-framework';
-export class SimpleViewModal {
-  @bindable showing;
+export class SimpleView {
   @bindable somethingbound;
-
-  constructor() {
-
-  }
+  constructor() {}
 }
