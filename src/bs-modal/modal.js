@@ -5,6 +5,8 @@ import $ from 'bootstrap';
 @inject(Element)
 export class Modal {
   @bindable showing = false;
+  @bindable classes='modal fade';
+  @bindable large=false;
   constructor(element) {
     this.element = element;
   }

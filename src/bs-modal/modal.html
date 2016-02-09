@@ -1,6 +1,6 @@
 <template>
-  <div ref="modal" class="modal fade">
-    <div class="modal-dialog">
+  <div ref="modal" class="${classes}">
+    <div class="modal-dialog ${large===true || large==='true' ? 'modal-lg' : ''}">
       <div class="modal-content">
         <content select="modal-header"></content>
         <content select="modal-body"></content>
