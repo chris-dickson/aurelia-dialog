@@ -29,6 +29,10 @@
 
 <template>
 
+  <require from="bs-modal/modal-header"></require>
+  <require from="bs-modal/modal-body"></require>
+  <require from="bs-modal/modal-footer"></require>
+  <require from="bs-modal/modal"></require>
   <require from="modal/simple-view"></require>
   <section class="au-animate">
 
@@ -36,7 +40,7 @@
       <label>Enter text to be passed to the modal:</label>
       <input value.bind="modalVariable">
       <div>
-        <button click.delegate="btnClick()">Show/Hide Modal</button>
+        <button click.trigger="btnClick()">Show/Hide Modal</button>
       </div>
       <div>
         <label>You entered: ${modalVariable}</label>
@@ -51,7 +55,7 @@
       </modal-body>
       <modal-footer>
         <button class="btn" click.trigger="someFunctionGoesHere()">Save</button>
-        <au-button text="Cancel" click.call="someFunctionGoesHere()"></au-button>
+        <button class="btn" click.trigger="someFunctionGoesHere()">Cancel</button>
       </modal-footer>
     </modal>
 
